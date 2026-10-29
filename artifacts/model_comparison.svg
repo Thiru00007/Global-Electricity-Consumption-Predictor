@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>
+text{font-family:Arial,sans-serif;fill:#263238}
+.title{font-size:27px;font-weight:700}
+.subtitle{font-size:13px;fill:#58656b}
+.head{font-size:13px;font-weight:700;fill:#fff}
+.label{font-size:14px}
+.bold{font-weight:700;fill:#176d52}
+.small{font-size:12px;fill:#58656b}
+</style>
+<text x="700" y="46" text-anchor="middle" class="title">Primary Energy Forecasts - Chronological Holdout</text>
+<text x="700" y="73" text-anchor="middle" class="subtitle">Train: 2000-2018 | Test: 2019-2023 | Common test set: 1,090 country-years</text>
+<rect x="45" y="108" width="1310" height="42" rx="5" fill="#284c3f"/>
+<text x="65" y="135" class="head">Model</text>
+<text x="565" y="135" text-anchor="middle" class="head">MAE TWh (lower)</text>
+<text x="735" y="135" text-anchor="middle" class="head">RMSE TWh (lower)</text>
+<text x="900" y="135" text-anchor="middle" class="head">WAPE % (lower)</text>
+<text x="1065" y="135" text-anchor="middle" class="head">MASE (lower)</text>
+<text x="1240" y="135" text-anchor="middle" class="head">R2 (higher)</text>
+<rect x="45" y="151" width="1310" height="47" fill="#f7f9f8"/>
+<text x="65" y="180" class="label">LassoCV</text>
+<text x="565" y="180" text-anchor="middle" class="label">85.296</text>
+<text x="735" y="180" text-anchor="middle" class="label">150.613</text>
+<text x="900" y="180" text-anchor="middle" class="label">16.315</text>
+<text x="1065" y="180" text-anchor="middle" class="label">6.359</text>
+<text x="1240" y="180" text-anchor="middle" class="label">0.988583</text>
+<rect x="45" y="199" width="1310" height="47" fill="#fff"/>
+<text x="65" y="228" class="label">Random Forest</text>
+<text x="565" y="228" text-anchor="middle" class="label">21.038</text>
+<text x="735" y="228" text-anchor="middle" class="label">61.675</text>
+<text x="900" y="228" text-anchor="middle" class="label">4.024</text>
+<text x="1065" y="228" text-anchor="middle" class="label">1.568</text>
+<text x="1240" y="228" text-anchor="middle" class="label">0.998086</text>
+<rect x="45" y="247" width="1310" height="47" fill="#f7f9f8"/>
+<text x="65" y="276" class="label">LightGBM (absolute target)</text>
+<text x="565" y="276" text-anchor="middle" class="label">23.055</text>
+<text x="735" y="276" text-anchor="middle" class="label">68.784</text>
+<text x="900" y="276" text-anchor="middle" class="label">4.410</text>
+<text x="1065" y="276" text-anchor="middle" class="label">1.719</text>
+<text x="1240" y="276" text-anchor="middle" class="label">0.997619</text>
+<rect x="45" y="295" width="1310" height="47" fill="#edf6f1"/>
+<text x="65" y="324" class="label bold">LightGBM (delta + fallback; app path)</text>
+<text x="565" y="324" text-anchor="middle" class="label bold">18.348</text>
+<text x="735" y="324" text-anchor="middle" class="label bold">52.581</text>
+<text x="900" y="324" text-anchor="middle" class="label bold">3.509</text>
+<text x="1065" y="324" text-anchor="middle" class="label bold">1.368</text>
+<text x="1240" y="324" text-anchor="middle" class="label bold">0.998608</text>
+<rect x="45" y="343" width="1310" height="47" fill="#fff"/>
+<text x="65" y="372" class="label">Carry-forward baseline</text>
+<text x="565" y="372" text-anchor="middle" class="label">18.655</text>
+<text x="735" y="372" text-anchor="middle" class="label">52.709</text>
+<text x="900" y="372" text-anchor="middle" class="label">3.568</text>
+<text x="1065" y="372" text-anchor="middle" class="label">1.391</text>
+<text x="1240" y="372" text-anchor="middle" class="label">0.998602</text>
+<line x1="45" y1="404" x2="1355" y2="404" stroke="#dce4df"/>
+<text x="55" y="435" class="small">LightGBM modestly beats the carry-forward baseline on this pooled global holdout; MAE gain is about 1.6%.</text>
+<text x="55" y="460" class="small">Across 212 countries with five complete test years, median country WAPE: LightGBM 6.12%, baseline 5.62%.</text>
+<text x="55" y="485" class="small">LightGBM had lower country WAPE in 93 of 212 countries. Aggregated performance does not imply typical-country gains.</text>
+<text x="55" y="510" class="small">MASE above 1 is possible even when a model beats the test-set carry-forward baseline; the scales are different.</text>
+<text x="55" y="535" class="small">R2 is not a percent-accuracy score. Full methodology and definitions are in model_comparison.md.</text>
+</svg>
